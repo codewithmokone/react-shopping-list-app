@@ -5,6 +5,7 @@ import { deleteItem } from './store/AddDataSlice'
 import { GrEdit } from 'react-icons/gr';
 import { RiDeleteBin6Line } from 'react-icons/ri'
 import EditItem from './EditItem';
+import { Box } from '@mui/material';
 
 const Card = () => {
 
@@ -14,7 +15,7 @@ const Card = () => {
 
   const dispatch = useDispatch();
 
-  const { loading, error, data } = useSelector((state) => state.data);
+  const { data } = useSelector((state) => state.data);
 
   // Handles edit function
   const handleEdit = id => {
@@ -42,31 +43,33 @@ const Card = () => {
   }, [data]);
 
   return (
-    <div className="card-container">
-      <div>
+    <Box >
+      <Box>
         {data && data.map(item => (
-          <div className="item-card" key={item.id}>
-            <div className="card-checkbox">
+          <Box sx={{ width: { xs: 360, sm: 500, md: 786 },backgroundColor:'#CFB997' }} className="item-card" key={item.id}>
+            <Box className="card-checkbox">
               <input value="test" type="checkbox" />
-            </div>
-            <div className="card-details">
+            </Box>
+            <Box className="card-details">
               <h4>{item.itemName}</h4>
               <p>{item.itemDescription}</p>
-            </div>
-            <div className="card-number">
-              <p>{item.quantity}</p>
-              <div className="card-btn-icon">
+            </Box>
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center',marginRight:1 }}>
+              <Box>
+                <p>{item.quantity}</p>
+              </Box>
+              <Box className="card-btn-icon">
                 <span><GrEdit onClick={() => { handleEdit(item.id) }} /></span>
                 <span><RiDeleteBin6Line onClick={() => handleDelete(item.id)} /></span>
-              </div>
-            </div>
-          </div>
+              </Box>
+            </Box>
+          </Box>
         ))}
-      </div>
-      <div>
+      </Box>
+      <Box>
         {show && <EditItem setShow={setShow} show={show} selectedItem={selectedItem} setOpenEdit={setOpenEdit} />}
-      </div>
-    </div>
+      </Box>
+    </Box>
   )
 }
 

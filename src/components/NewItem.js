@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import NavigationBar from './NavigationBar'
 import { Button, Form } from 'react-bootstrap'
-import {addItem} from './store/AddDataSlice'
+import { addItem } from './store/AddDataSlice'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { Box } from '@mui/material'
+import InputField from './InputField'
 
 const NewItem = () => {
 
@@ -28,48 +30,67 @@ const NewItem = () => {
   })
 
   return (
-    <div className="newItems-container">
+    <Box sx={{
+      width: { xs: 400, sm: 786, md: 1024 },
+      height: "100vh",
+      backgroundColor: '#567189',
+      margin: 'auto',
+    }}
+    >
       <header>
         <NavigationBar />
       </header>
-      <main className="additem-main">
-        <div>
-          <h4>Add New Item</h4>
-        </div>
-        <div>
-          <Form className="additem-form" onSubmit={handleAdd}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Item name:</Form.Label>
-              <Form.Control 
-                type="text" 
-                placeholder="Enter item name" 
-                onChange={(e) => setItemName(e.target.value)}/>
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Item description</Form.Label>
-              <Form.Control 
-                type="text" 
-                placeholder="Enter item description" 
-                onChange={(e) => setItemDescription(e.target.value)}/>
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Quantity</Form.Label>
-              <Form.Control 
-                type="text" 
-                placeholder="Enter quantity" 
-                onChange={(e) => setQuantity(e.target.value)}/>
-            </Form.Group>
-            <div className="newiten-btn">
-            <Button  variant="dark" type="submit">
-              Submit
-            </Button>
-            </div>
-          </Form>
-        </div>
+      <main>
+        <Box sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          margin: 'auto'
+        }}>
+          <Box sx={{ marginTop: 5 }}>
+            <h4>Add New Item</h4>
+          </Box>
+          <Box
+            sx={{
+              width: { xs: 400, sm: 500, md: 800 },
+              display:'flex',
+              justifyContent:'center',
+              marginTop: 2,
+            }}>
+            <form>
+              <Box sx={{ width: { xs: 300, sm: 500, md: 700 }, marginTop: 2 }}>
+                <label>Name</label>
+                <InputField
+                  type="text"
+                  placeholder="Enter item name"
+                  onChange={(e) => setItemName(e.target.value)}
+                />
+              </Box>
+              <Box sx={{ width: { xs: 300, sm: 500, md: 700 }, marginTop: 2 }}>
+                <label>Description</label>
+                <InputField
+                  type="text"
+                  placeholder="Enter item description"
+                  onChange={(e) => setItemDescription(e.target.value)}
+                />
+              </Box>
+              <Box sx={{ width: { xs: 300, sm: 500, md: 700 }, marginTop: 2 }}>
+                <label>Quantity</label>
+                <InputField
+                  type="text"
+                  placeholder="Enter quantity"
+                  onChange={(e) => setQuantity(e.target.value)}
+                />
+              </Box>
+              <Box sx={{ display:'flex', justifyContent:'center', marginTop: 2 }}>
+                <Button sx={{width:400}} onClick={handleAdd}>Add</Button>
+              </Box>
+            </form>
+          </Box>
+        </Box>
       </main>
-    </div>
+    </Box>
   )
 }
 
