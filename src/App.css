@@ -1,23 +1,9 @@
-/* ----- Card styling ----- */
-/* .card-container {
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-items: center;
-
-} */
-
-
-
 /* ----- View List Styling ----- */
 .viewlist-container {
-  /* width: 1024px; */
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
   margin: auto;
   text-align: center;
   background-color: #FBFBFB;

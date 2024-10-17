@@ -6,12 +6,12 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCXngGhohvq3T7cFxBTUH5lJwOS9pE_2l8",
-  authDomain: "shopping-list-app-59958.firebaseapp.com",
-  projectId: "shopping-list-app-59958",
-  storageBucket: "shopping-list-app-59958.appspot.com",
-  messagingSenderId: "1003348752862",
-  appId: "1:1003348752862:web:dad033665eea600f0f854f"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_API_ID,
 };
 
 // Initialize Firebase
@@ -19,4 +19,4 @@ const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
 
-export { db }
+export { db };

@@ -31,7 +31,7 @@ const Card = () => {
 
   useEffect(() => {
     dispatch(fetchData());
-  }, [data,dispatch]);
+  }, [data]);
 
   return (
     <div className="card-container">
