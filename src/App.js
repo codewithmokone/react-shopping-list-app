@@ -1,15 +1,17 @@
 
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import NewItem from './components/NewItem';
-import ViewItems from './components/ViewItems';
+import NewItem from '../src/components/NewItem/NewItem';
+import ViewItems from '../src/components/ViewItems/ViewItems';
 import store from './components/store/store';
 import { Provider } from 'react-redux';
-import EditItem from './components/EditItem';
+import EditItem from '../src/components/EditItem/EditItem';
+import NavigationBar from '../src/components/Navbar/NavigationBar';
 
 function App() {
   return (
     <Provider store={store}>
+        <NavigationBar />
         <Routes>
           <Route path="/" element={<ViewItems />} />
           <Route path="/newitem" element={<NewItem />} />
