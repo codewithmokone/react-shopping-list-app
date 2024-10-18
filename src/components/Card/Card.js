@@ -35,13 +35,16 @@ const Card = () => {
 
   return (
     <div className="card-container">
-      <div className="w-[90%]">
+      <div className="w-[100%]">
         <ul className="w-full divide-y divide-gray-100">
           {data &&
             data.map((item, index) => (
               <>
                 <li key={index} className="flex justify-between gap-x-6 py-5">
                   <div className="flex flex-row justify-between w-3/4">
+                    <div>
+                    <input id="comments" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600" />
+                    </div>
                     <div className="w-1/3">
                       <p className="sm:text-xs md:text-sm xl:text-lg  font-semibold leading-6 text-gray-900 text-start">
                         {item.itemName}

@@ -9,8 +9,10 @@ const ViewItems = () => {
         <div className="viewlist-heading">
           <h4 className="view-heading font-bold mt-8">Items List</h4>
         </div>
-        <div className="viewlist-items mt-8">
-          <Card />
+        <div className="mt-8 flex flex-col  justify-center">
+          <div className="flex flex-col">
+            <Card />
+          </div>
         </div>
       </main>
     </div>
