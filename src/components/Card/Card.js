@@ -42,26 +42,26 @@ const Card = () => {
               <>
                 <li key={index} className="flex justify-between gap-x-6 py-5">
                   <div className="flex flex-row justify-between w-3/4">
-                    <div>
-                    <input id="comments" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600" />
+                    <div className=" flex items-center">
+                    <input id="list-checkbox" name="list-checkbox" type="checkbox" class="h-4 w-4 rounded border-gray-300 focus:ring-gray-800 text-gray-500" />
                     </div>
-                    <div className="w-1/3">
+                    <div className="flex items-center w-1/3 ">
                       <p className="sm:text-xs md:text-sm xl:text-lg  font-semibold leading-6 text-gray-900 text-start">
                         {item.itemName}
                       </p>
                     </div>
-                    <div className="w-1/3">
-                      <p className="mt-1 sm:text-xs md:text-sm xl:text-lg leading-5 text-gray-500 text-start">
+                    <div className="flex items-center w-1/3 ">
+                      <p className=" sm:text-xs md:text-sm xl:text-lg leading-5 text-gray-500 text-start">
                         {item.itemDescription}
                       </p>
                     </div>
-                    <div>
-                      <p className="mt-1 sm:text-xs md:text-sm xl:text-lg leading-5 text-gray-500">
+                    <div className=" flex items-center">
+                      <p className="sm:text-xs md:text-sm xl:text-lg leading-5 text-gray-500">
                         {item.quantity}
                       </p>
                     </div>
                   </div>
-                  <div className="sm:flex sm:flex-row sm:items-end">
+                  <div className="sm:flex sm:flex-row sm:items-end flex items-center">
                     <PencilIcon
                       aria-hidden="true"
                       onClick={() => {
